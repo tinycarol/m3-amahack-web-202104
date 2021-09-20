@@ -7,6 +7,8 @@ import NotFound from "./components/notFound/NotFound";
 import Login from "./components/login/Login";
 import Product from "./components/product/Product";
 import Products from "./components/products/Products";
+import Register from "./components/register/Register";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <div className="App__content">
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/profile" component={Profile} />
           <Route path="/about" component={About} />
           <Route path="/products" component={Products} exact />
           <Route path="/products/:id" component={Product} />

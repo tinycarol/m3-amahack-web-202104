@@ -9,3 +9,7 @@ export function listProducts() {
 export function getProduct(id) {
 	return http.get(`/products/${id}`);
 }
+
+export function sendReview(review, productId) {
+	return http.post(`/products/${productId}/review`, review);
+}

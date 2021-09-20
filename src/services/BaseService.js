@@ -7,7 +7,7 @@ export const create = (useAccessToken = true) => {
   });
 
   http.interceptors.request.use((request) => {
-    if (useAccessToken) {
+    if (useAccessToken && getAccessToken()) {
       request.headers.common.Authorization = `Bearer ${getAccessToken()}`;
     }
     return request;
