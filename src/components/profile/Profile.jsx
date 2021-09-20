@@ -1,30 +1,36 @@
 import { useEffect, useState } from "react";
-import { getCurrentUser } from "../../services/UserService";
+import { Link, useParams } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { getUser } from "../../services/UserService";
 import "./Profile.css";
 
 export default function Profile() {
-  const [user, setUser] = useState();
+  const [profileUser, setProfileUser] = useState();
   const [error, setError] = useState();
+  const { id } = useParams();
+  const { user } = useAuth();
 
   useEffect(() => {
-    getCurrentUser()
-      .then((u) => setUser(u))
+    getUser(id || "me")
+      .then((u) => setProfileUser(u))
       .catch(() => setError(true));
-  }, []);
+  }, [id]);
 
   if (error) {
     return <h2>There was an error :c</h2>;
   }
 
-  if (!user) {
+  if (!profileUser) {
     return <>Loading...</>;
   }
 
   return (
     <div className="Profile">
-      <h2>🐤 {user.name} 🐤</h2>
-      <p>Email: {user.email}</p>
-      <img className="Profile__avatar" src={user.image} alt="" />
+      <h2>🐤 {profileUser.name} 🐤</h2>
+      <p>Email: {profileUser.email}</p>
+			<img className="Profile__avatar" src={profileUser.image} alt="" />
+			<br/>
+      {user?.id === profileUser.id && <Link to="/profile/edit">Edit profile</Link>}
     </div>
   );
 }

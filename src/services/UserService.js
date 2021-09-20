@@ -13,3 +13,7 @@ export const getUser = (id) => {
 export const createUser = (user) => {
 	return http.post("/users", user);
 }
+
+export const editUser = (user) => {
+	return http.patch("/users/me", user);
+}

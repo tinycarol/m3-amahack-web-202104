@@ -9,6 +9,8 @@ import Product from "./components/product/Product";
 import Products from "./components/products/Products";
 import Register from "./components/register/Register";
 import Profile from "./components/profile/Profile";
+import EditProfile from "./components/editProfile/EditProfile";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/profile" component={Profile} />
+          <ProtectedRoute path="/profile/edit" component={EditProfile} />
+          <ProtectedRoute path="/profile/:id" component={Profile} />
+          <ProtectedRoute path="/profile" component={Profile} />
           <Route path="/about" component={About} />
           <Route path="/products" component={Products} exact />
           <Route path="/products/:id" component={Product} />
