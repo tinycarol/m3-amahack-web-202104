@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../services/ProductService";
 import GoBack from "../goBack/GoBack";
+import Review from "../review/Review";
+import ReviewForm from "../reviewForm/ReviewForm";
 
 export default function Product() {
   const [product, setProduct] = useState();
@@ -19,7 +21,11 @@ export default function Product() {
   }
 
   if (!product) {
-    return <h2>😞 That product doesn't exist 😞</h2>;
+    return <h2>Loading...</h2>;
+  }
+
+  const onReviewCreate = (review) => {
+    setProduct((old) => ({ ...old, reviews: [...old.reviews, review] }))
   }
 
   return (
@@ -30,6 +36,13 @@ export default function Product() {
       <p>Name: {product.name}</p>
       <p>Description: {product.description}</p>
       <p>Price: {product.price}€</p>
+      <div className="Product__reviews">
+        <h3>💭 User reviews 💭</h3>
+        {product.reviews.map((review) => (
+          <Review key={review.id} {...review} />
+        ))}
+      </div>
+      <ReviewForm productId={id} onCreate={onReviewCreate} />
     </div>
   );
 }
