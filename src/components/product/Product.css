@@ -1,0 +1,36 @@
+.Product__reviews{
+    border: 1px solid black;
+    margin-bottom: 20px;
+  }
+  
+  .Product__reviews p{
+      text-align: start;
+  }
+  
+  .Product__reviews__review{
+      padding: 16px;
+      border: 1px solid black;   
+  }
+  
+  .Product__newReview{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 30px;
+  }
+  
+  .Product__newReview input{
+      padding: 8px;
+      margin:4px;
+      width: 800px
+  }
+  
+  .Product__newReview button{
+      width: 150px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+  }
