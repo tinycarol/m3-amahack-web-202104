@@ -49,7 +49,7 @@ export default function AuthContextProvider({ children }) {
   const logout = () => {
     deleteAccessToken();
     setToken(undefined);
-    setUser(undefined);
+    setUser(undefined);   
   }
 
   const value = { user: user, token: token, login: loginFn, logout };
