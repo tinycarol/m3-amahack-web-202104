@@ -1,0 +1,7 @@
+@use "src/assets/sass/placeholders";
+
+.Products {
+  &__list {
+		@extend %flexWrapped;
+  }
+}

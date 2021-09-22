@@ -1,0 +1,7 @@
+@use "src/assets/sass/placeholders" as *;
+
+.Product {
+	&__reviews {
+		@extend %flexWrapped;
+	}
+}

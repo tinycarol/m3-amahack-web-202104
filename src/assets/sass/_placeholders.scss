@@ -1,0 +1,15 @@
+@use "./colors";
+
+%box {
+  box-shadow: 20px 20px colors.$primary, -20px -20px colors.$accent,
+    0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin: 45px;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+%flexWrapped {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

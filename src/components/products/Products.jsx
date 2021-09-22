@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { listProducts } from "../../services/ProductService";
 import ProductCard from "../productCard/ProductCard";
-import "./Products.css";
+import "./Products.scss";
 
 export default function Products() {
   const [products, setProducts] = useState();
@@ -28,9 +28,11 @@ export default function Products() {
   return (
     <section id="Products" className="Products">
       <h2>🏪 Cool stuff we sell 🏪</h2>
-      {products.map((product) => (
-        <ProductCard key={product.id} {...product} />
-      ))}
+      <div className="Products__list">
+        {products.map((product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+      </div>
     </section>
   );
 }

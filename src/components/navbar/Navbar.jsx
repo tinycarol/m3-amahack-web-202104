@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import Logo from "../logo/Logo";
-import "./Navbar.css";
+import "./Navbar.scss";
 
 // TODO: show link to user profile or login
 export default function Navbar() {
@@ -58,7 +58,11 @@ export default function Navbar() {
                   activeClassName="Navbar__content__link--active"
                   exact
                 >
-                  🐔{" "}
+                  <img
+                    src={user.image}
+                    className="Navbar__content__link__avatar"
+                    alt=""
+                  />
                   <span className="Navbar__content__link__name">
                     {user.name}
                   </span>

@@ -1,0 +1,65 @@
+@use "src/assets/sass/utils" as *;
+
+.Navbar {
+  width: 100vw;
+  background-color: $primary;
+  margin-bottom: 30px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+
+    @media (min-width: 800px) {
+      & {
+        margin: 0 auto;
+        width: 800px;
+      }
+    }
+
+    & > ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: space-around;
+      flex-grow: 1;
+    }
+
+    & > ul > li {
+      list-style: none;
+    }
+
+    &__button {
+      padding: 0px;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__link {
+      @media (max-width: 500px) {
+        &__name {
+          display: none;
+        }
+
+        & {
+          font-size: 20pt;
+        }
+      }
+
+      &__avatar {
+        @include circle(30px);
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      &--active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

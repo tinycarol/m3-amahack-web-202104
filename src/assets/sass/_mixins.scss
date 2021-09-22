@@ -1,0 +1,6 @@
+@mixin circle($diameter: 200px) {
+	width: $diameter;
+	height: $diameter;
+	border-radius: $diameter / 2;
+	object-fit: cover;
+}

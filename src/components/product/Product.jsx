@@ -4,6 +4,7 @@ import { getProduct } from "../../services/ProductService";
 import GoBack from "../goBack/GoBack";
 import Review from "../review/Review";
 import ReviewForm from "../reviewForm/ReviewForm";
+import "./Product.scss";
 
 export default function Product() {
   const [product, setProduct] = useState();
@@ -25,8 +26,8 @@ export default function Product() {
   }
 
   const onReviewCreate = (review) => {
-    setProduct((old) => ({ ...old, reviews: [...old.reviews, review] }))
-  }
+    setProduct((old) => ({ ...old, reviews: [...old.reviews, review] }));
+  };
 
   return (
     <div className="Product">
@@ -36,8 +37,8 @@ export default function Product() {
       <p>Name: {product.name}</p>
       <p>Description: {product.description}</p>
       <p>Price: {product.price}€</p>
+      <h3>💭 User reviews 💭</h3>
       <div className="Product__reviews">
-        <h3>💭 User reviews 💭</h3>
         {product.reviews.map((review) => (
           <Review key={review.id} {...review} />
         ))}

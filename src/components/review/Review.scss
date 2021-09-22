@@ -1,0 +1,9 @@
+@use "src/assets/sass/placeholders";
+
+.Review {
+	@extend %box;
+
+  &__score--dark {
+    filter: grayscale(100%);
+  }
+}

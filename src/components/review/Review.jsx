@@ -1,4 +1,4 @@
-import "./Review.css";
+import "./Review.scss";
 
 export default function Review({ title, description, score, author }) {
   return (
