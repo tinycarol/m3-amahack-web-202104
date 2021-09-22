@@ -1,0 +1,12 @@
+.ReviewForm__element__input {
+    width: 150px
+}
+
+.ReviewForm__element__label {
+    display:inline-block;
+    width: 150px
+}
+
+.ReviewForm__button {
+    margin: 10px 0;
+}

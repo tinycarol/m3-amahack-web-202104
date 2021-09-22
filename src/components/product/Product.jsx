@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProduct } from "../../services/ProductService";
 import GoBack from "../goBack/GoBack";
 import Review from "../review/Review";
+import ReviewForm from "../reviewForm/ReviewForm";
 
 export default function Product() {
   const [product, setProduct] = useState();
@@ -32,6 +33,7 @@ export default function Product() {
       <p>Description: {product.description}</p>
       <p>Price: {product.price}€</p>
       <Review id={id}/>
+      <ReviewForm />
     </div>
   );
 }
