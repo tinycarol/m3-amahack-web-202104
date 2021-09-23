@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from "react";
 import { getProduct } from "../../services/ProductService";
+import { createReview } from '../../services/ReviewService';
 import "./ReviewForm.css"
 
-const ReviewForm = () => {
+const ReviewForm = ({ productId }) => {
 
     const [ form, setForm ] = useState({
         title: "",
@@ -29,10 +31,25 @@ const ReviewForm = () => {
         })
     } 
 
+    const onSubmit = (e) => {
+        createReview(productId, {
+            ...form,
+            product: productId
+        })
+        .then(() => {
+            setForm({
+                title: "",
+                description: "",
+                score: 0
+            })
+        })
+        .catch((e) => console.error(e))
+    }
+
     return (
         <>
             <h2>Write your own review</h2>
-            <form className="ReviewForm">
+            <form className="ReviewForm" onSubmit={onSubmit}>
                 <div className="ReviewForm__element">
                     <label className="ReviewForm__element__label" htmlFor="title">Title</label>
                     <input className="ReviewForm__element__input" type="text" name="title" value={form.title} onChange={onChange}></input>

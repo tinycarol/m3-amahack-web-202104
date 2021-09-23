@@ -33,7 +33,7 @@ export default function Product() {
       <p>Description: {product.description}</p>
       <p>Price: {product.price}€</p>
       <Review id={id}/>
-      <ReviewForm />
+      <ReviewForm productId={id}/>
     </div>
   );
 }
