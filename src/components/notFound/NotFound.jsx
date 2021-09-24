@@ -5,7 +5,6 @@ import React from "react";
     redirect: false,
 	};
 	timeout = 0;
-
   componentDidMount = () => {
     this.timeout = setTimeout(() => this.setState({ redirect: true }), 3000);
 	};
@@ -13,7 +12,6 @@ import React from "react";
 	componentWillUnmount() {
 		clearTimeout(this.timeout);
 	}
-
   render() {
     if (this.state.redirect) {
       return <Redirect to="/" />;

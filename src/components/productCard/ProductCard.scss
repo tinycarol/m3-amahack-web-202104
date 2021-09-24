@@ -1,0 +1,11 @@
+   
+@use "src/assets/sass/placeholders" as *;
+@use "src/assets/sass/mixins" as *;
+
+.ProductCard {
+	@extend %box;
+
+	img {
+		@include circle;
+	}
+}

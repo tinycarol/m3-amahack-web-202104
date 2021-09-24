@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import './Login.css'
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -41,11 +42,14 @@ export default function Login() {
         <input
           name="password"
           id="password"
+          type="password"
           value={credentials.password}
           onChange={onChange}
         />
         <button type="submit">Log in</button>
       </form>
+      <br />
+      <Link to="/signup">Don't have an account yet? Sign up here</Link>
     </div>
   );
 }

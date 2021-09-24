@@ -1,0 +1,22 @@
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    margin-bottom: 30px;
+}
+
+.Login input{
+    padding: 8px;
+    margin:4px;
+    width: 800px
+}
+
+.Login button{
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+} 

@@ -1,7 +1,8 @@
+   
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import Logo from "../logo/Logo";
-import "./Navbar.css";
+import "./Navbar.scss";
 
 // TODO: show link to user profile or login
 export default function Navbar() {

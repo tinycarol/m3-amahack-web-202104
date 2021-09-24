@@ -10,6 +10,10 @@ export function getProduct(id) {
   return http.get(`/products/${id}`);
 }
 
-export const doReview = (title, description, score, id) => {
-  return http.post("/review", { title, description, score, id });
+export function createReview(review, productId) {
+  return http.post(`/products/${productId}/reviews`, review);
+}
+
+export const createProduct = (product) => {
+  return http.post("/products", product);
 };
